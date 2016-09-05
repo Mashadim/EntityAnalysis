@@ -1,0 +1,51 @@
+{
+  "name": "carlabs-challenge",
+  "version": "1.0.0",
+  "description": "CarLabs Node.js coding challenge",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "webpack --progress | nodemon server/server.js",
+    "dev": "webpack-dev-server --hot --inline",
+    "test": "Coming soon..."
+  },
+  "author": "Masha Diminsky",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.14.0",
+    "aylien_textapi": "^0.6.0",
+    "handlebars": "^4.0.5",
+    "hapi": "^14.2.0",
+    "inert": "^4.0.2",
+    "lodash": "^4.15.0",
+    "log": "^1.4.0",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-localstorage": "^0.4.1",
+    "redux-thunk": "^2.1.0",
+    "sequelize": "^3.24.1",
+    "vision": "^4.1.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "css-loader": "^0.24.0",
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.1.0",
+    "eslint-plugin-react": "^6.1.2",
+    "file-loader": "^0.9.0",
+    "react-hot-loader": "^1.3.0",
+    "redux-logger": "^2.6.1",
+    "style-loader": "^0.13.1"
+  }
+}

@@ -1,0 +1,98 @@
+html {
+  font-size: 16px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+.general-font {
+	text-align:center;
+	color: #212626;
+/*	font-family: Helvetica, 'san serif';*/
+}
+
+.btn, .btn:focus {
+	background-color: #2185D0;
+	font-weight: 400;
+	color: white;
+}
+
+.btn:hover {
+	background-color: #3194de;
+	color: white;
+}
+
+.input-btn {
+	font-size: 14px;
+}
+
+.input-form {
+	font-size: 14px;
+}
+
+table {
+	text-align: center;
+	border-radius: 1%;
+	
+}
+
+table td {
+	cursor:context-menu;
+}
+
+.table-header {
+	background-color: #2185D0;
+	color: white;
+}
+
+.cachedSearch-div {
+	margin-top: 48px;
+	border: 1px solid #d3d3d3;
+	border-radius: 1%;
+	height: 500px;
+}
+
+.cachedSearch-heading {
+	margin: auto;
+	padding-top: 10px;
+	background-color: #2185D0;
+	color: white;
+}
+
+.cachedSearch-ul {
+	height: 428px;
+	overflow-y: scroll;
+}
+
+.cachedSearch-text:hover {
+	color: #2185D0;
+	cursor: pointer;
+}
+
+.error, .error-search{
+	font-size: 14px;
+	color:red;
+}
+
+.error {
+	margin-top: -15px !important;
+}
