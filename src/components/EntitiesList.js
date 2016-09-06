@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Entities from './Entities';
 import EntitiesText from './EntitiesText';
 
-class EntitiesList extends Component {
+export class EntitiesList extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
 		return shallowCompare(this, nextProps, nextState);
 	};
@@ -29,7 +29,7 @@ EntitiesList.propTypes = {
 	entitiesText: React.PropTypes.string.isRequired
 };
 
-function mapStateToProps({ entities = {}, entitiesText = '' } = {}) {
+function mapStateToProps({ entity: { entities = {}, entitiesText = '' }} = {}) {
 	return { 
 		entities, 
 		entitiesText 

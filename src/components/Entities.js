@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import shallowCompare from 'react/lib/shallowCompare';
 import { connect } from 'react-redux';
 
-class Entities extends Component {	
+export class Entities extends Component {	
 	shouldComponentUpdate(nextProps, nextState) {
 		return shallowCompare(this, nextProps, nextState);
 	};
@@ -51,7 +51,7 @@ Entities.propTypes = {
 	articleSearch: React.PropTypes.string
 }
 
-function mapStateToProps({ entities = {} } = {}) {
+function mapStateToProps({ entity: { entities = {} }} = {}) {
 	return { entities };
 };
 

@@ -3,7 +3,7 @@ import shallowCompare from 'react/lib/shallowCompare';
 import { connect } from 'react-redux';
 import { isWhatType } from '../redux/actions/isWhatType';
 
-class EntitiesText extends Component {
+export class EntitiesText extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
 		return shallowCompare(this, nextProps, nextState);
 	};
@@ -46,7 +46,7 @@ EntitiesText.propTypes = {
 	searchInput: React.PropTypes.string
 };
 
-function mapStateToProps({ entitiesText = '', searchInput= '' } = {}) {
+function mapStateToProps({ entity: { entitiesText = '', searchInput= '' }} = {}) {
 	return { 
 		entitiesText,
 		searchInput 

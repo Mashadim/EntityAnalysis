@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import shallowCompare from 'react/lib/shallowCompare';
 import { dbFetchEntities } from '../redux/actions/actions';
 
-class CachedSearchList extends Component {
+export class CachedSearchList extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
 		return shallowCompare(this, nextProps, nextState);
 	};
@@ -53,7 +53,7 @@ CachedSearchList.propTypes = {
 	cachedSearch: React.PropTypes.array.isRequired
 }
 
-function mapStateToProps({ cachedSearch = [] } = {}) {
+function mapStateToProps({ entity: { cachedSearch = [] }} = {}) {
 	return { cachedSearch }
 };
 

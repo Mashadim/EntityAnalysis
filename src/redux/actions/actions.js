@@ -1,10 +1,32 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 import { checkStringLength } from './checkStringLength';
 import { isWhatType } from './isWhatType';
-import { CACHE_SEARCH, SEND_ENTITIES, RESET_CACHED_ARTICLES, RESET_ENTITIES, SEND_ARTICLES, NO_RESULTS } from './types';
+import { CACHE_SEARCH, SEND_ENTITIES, RESET_CACHED_ARTICLES, RESET_ENTITIES, SEND_ARTICLES, NO_RESULTS, AUTH_USER } from './types';
 
 const ROOT_URL = 'http://localhost:3000';
 
+// Authentication actions:
+export function signUpUser({ username, email, password }) {
+	return function(dispatch){
+		axios.post(`${ROOT_URL}/signup`, { username, email, password })
+			.then(res => {
+			console.log('back from signup!', res)
+//				dispatch({ type: AUTH_USER })
+//				localStorage.setItem('token', res.data.token);
+//				browserHistory.push('/feature');
+			})
+			.catch((res) => {
+			console.log('error', res)
+//				console.log(res.data.error, res.data.errorMessage)
+//				dispatch(authError(res.data.error))
+			});
+	}
+};
+
+
+
+// Entity actions:
 // triggered when new input entered in cachedsearch input
 export function fetchEntitiesCachedSearch(search) {
 		return (dispatch) => {
@@ -33,7 +55,7 @@ export function dbFetchEntities(search, triggerFromCachedSearch) {
 	};
 	
 	return (dispatch, getState) => {
-		const cachedSearch = getState().cachedSearch;
+		const cachedSearch = getState().entity.cachedSearch;
 		
 		if(triggerFromCachedSearch || cachedSearch.indexOf(search) !== -1) {
 			axios.get(`${ROOT_URL}/entities/db?search=${search}`) 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Entities from './Entities';
 import EntitiesText from './EntitiesText';
 
-class CachedEntitiesList extends Component {
+export class CachedEntitiesList extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
 		return shallowCompare(this, nextProps, nextState);
 	};
@@ -25,7 +25,6 @@ class CachedEntitiesList extends Component {
 		
 		return(
 			<div>
-
 				{this.renderArticleList(cachedMatchingArticles)}
 			</div>
 		)
@@ -36,7 +35,7 @@ CachedEntitiesList.propTypes = {
 	cachedMatchingArticles : React.PropTypes.array.isRequired
 };
 
-function mapStateToProps({ cachedMatchingArticles = [] } = {}) {
+function mapStateToProps({ entity: { cachedMatchingArticles = [] }} = {}) {
 	return { cachedMatchingArticles };
 }
 

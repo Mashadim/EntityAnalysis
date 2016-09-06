@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import shallowCompare from 'react/lib/shallowCompare';
 import { fetchEntitiesCachedSearch } from '../redux/actions/actions';
 
-class CachedSearchBar extends Component {
+export class CachedSearchBar extends Component {
 	constructor(props) {
 		super(props);	
 		

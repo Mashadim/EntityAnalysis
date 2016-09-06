@@ -1,8 +1,8 @@
 import update from 'react/lib/update';
 
-import { CACHE_SEARCH, SEND_ENTITIES, RESET_CACHED_ARTICLES, RESET_ENTITIES, SEND_ARTICLES, NO_RESULTS } from './actions/types';
+import { CACHE_SEARCH, SEND_ENTITIES, RESET_CACHED_ARTICLES, RESET_ENTITIES, SEND_ARTICLES, NO_RESULTS } from '../actions/types';
 
-export default function(state, action) {
+export default function(state = {}, action) {
 	switch(action.type) {
 		case SEND_ENTITIES:
 				return update(state, { entities: { $set: action.entities }, entitiesText: { $set: action.entitiesText }, searchInput: { $set: action.search } });

@@ -1,10 +1,16 @@
 const initialState = {
-	entities: {},
-	entitiesText: '',
-	searchInput: '',
-	cachedMatchingArticles: [],
-	ifNoResultsFound: '',
-	cachedSearch: []
+	entity: {
+		entities: {},
+		entitiesText: '',
+		searchInput: '',
+		cachedMatchingArticles: [],
+		ifNoResultsFound: '',
+		cachedSearch: []
+	},
+	auth: {
+		authenticated: false,
+		errorMessage: ''
+	}
 };
 
 export default initialState;

@@ -3,7 +3,7 @@ import shallowCompare from 'react/lib/shallowCompare';
 import { connect } from 'react-redux';
 import { dbFetchEntities } from '../redux/actions/actions';
 
-class GeneralSearchBar extends Component {
+export class GeneralSearchBar extends Component {
 	constructor(props) {
 		super(props);	
 		
@@ -21,6 +21,7 @@ class GeneralSearchBar extends Component {
 	
 	handleFormSubmit(event) {
 		event.preventDefault();
+		console.log(this.state.search)
 		this.props.dbFetchEntities(this.state.search);
 		this.setState({ search: '' });
 	}
@@ -42,7 +43,7 @@ class GeneralSearchBar extends Component {
 				/>
 				<span className='input-group-btn' >
 					<button className='btn btn-secondary btn-lg input-btn' type='submit'>
-						Get Entities
+						Extract Entities
 					</ button>
 				</span>
 			</form>

@@ -1,15 +1,24 @@
+'use strict';
+
 const Hapi = require('hapi');
 const http = require('https');
+const handlebars = require('handlebars');
 const inert = require('inert');
 const vision = require('vision');
+const hapi_cors = require('hapi-cors');
+const Boom = require('boom');
+const glob = require('glob');
+const path = require('path');
+const secret = require('./config');
+const jwtAuth = require('hapi-auth-jwt');
+
 const url = require('url');
-const AYLIENTextAPI = require('../aylien.config.js');
+const AYLIENTextAPI = require('../aylien.config');
 
 const Sequelize = require('sequelize');
-const sequelizeConfig = require('./models/database.config.js');
-const SearchCache = require('./models/searchCache');
+const sequelizeConfig = require('./models/database.config');
+const SearchCache = require('./models/SearchCache');
 
-const handlebars = require('handlebars');
 const version = require('../package.json').version;
 const author = require('../package.json').author;
 const Log = require('log');
@@ -20,7 +29,8 @@ const port = 3000;
 const server = new Hapi.Server();
 
 // Hapi plugins
-const plugins = [ inert, vision ];
+// when I include the glob here I get an error***
+const plugins = [ inert, vision, jwtAuth ];
 
 // server settings
 server.connection({
@@ -31,13 +41,29 @@ server.connection({
 	}
 });
 
-server.register(plugins, (err) => {
+server.register(plugins,(err) => {
 	if(err) console.log(err);
+	
+	// name and scheme called 'jwt'
+	// setting third 'required' option means every route must have a token
+	server.auth.strategy('jwt', 'jwt', {
+		key: secret,
+		verifyOptionts: { algorithms: ['HS256'] }
+	});
 	
 	server.views({
 		engines: { html: handlebars },
 		relativeTo: __dirname,
 		path: '../dist'
+	});
+	
+	// creates a route for every file in the routes folder
+	// doesn't work***
+	glob.sync('./routes/*.js', {
+		root: __dirname
+	}).forEach(file => {
+		const route = require(path.join(__dirname, file));
+		server.route(route);
 	});
 	
 	server.route([
@@ -172,6 +198,7 @@ server.register(plugins, (err) => {
 					}))
 			}
 		},
+		
 	])		
 });
 

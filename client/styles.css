@@ -96,3 +96,18 @@ table td {
 .error {
 	margin-top: -15px !important;
 }
+
+.signup {
+	margin-top:25px;
+	width: 50%;
+}
+
+.header {
+	font-size: 1.1em;
+	margin: 0 auto;
+}
+
+.btn-sign {
+	width: 50%;
+	margin: 0 auto;
+}
