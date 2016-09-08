@@ -27,7 +27,7 @@ export function signUpUser({ username, email, password }) {
 
 
 // Entity actions:
-// triggered when new input entered in cachedsearch input
+// triggered when new input entered in cachedsearchbar
 export function fetchEntitiesCachedSearch(search) {
 		return (dispatch) => {
 			axios.get(`${ROOT_URL}/entities/dbmatch?search=${search}`)

@@ -33,7 +33,7 @@ export class Entities extends Component {
 					<thead className='table-header'>
 						<tr>
 							<th className='text-xs-center'> Entity </th>
-							<th className='text-xs-center'> Data </th>
+							<th className='text-xs-center'> Entity Data </th>
 						</tr>
 					</thead>
 					<tbody>

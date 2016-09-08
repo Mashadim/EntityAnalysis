@@ -8,6 +8,11 @@ module.exports = {
 		publicPath: 'http://localhost:8080/',
 		path: __dirname + '/dist'
 	},
+	externals: {
+		'react/addons': true,
+		'react/lib/ExecutionEnvironment': true,
+		'react/lib/ReactContext': true
+	},
 	module: {
 		loaders: [
 			{

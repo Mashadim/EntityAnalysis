@@ -6,7 +6,7 @@ import CachedSearchBar from './CachedSearchBar';
 import EntitiesList from './EntitiesList';
 import CachedEntitiesList from './CachedEntitiesList';
 import CachedSearchList from './CachedSearchList';
-import '!style!css!../../client/styles.css';
+import '../../client/styles.css';
 
 export class EntitiesMain extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
@@ -14,7 +14,7 @@ export class EntitiesMain extends Component {
 	};
 	
 	render() {
-		const { cachedSearch, cachedMatchingArticles, ifNoResultsFound } = this.props;
+		const { cachedMatchingArticles, ifNoResultsFound } = this.props;
 		let renderView = cachedMatchingArticles.length ? <CachedEntitiesList /> : <EntitiesList />;
 		let checkResults = (ifNoResultsFound === '') ? renderView : (
 			<div className='text-xs-right error'> { ifNoResultsFound } </div>
@@ -43,21 +43,16 @@ export class EntitiesMain extends Component {
 	}
 };
 
-function mapStateToProps({ auth: { authenticated = false } } = {}) {
-  return { authenticated };
-}
-
 EntitiesMain.propTypes = {
-	cachedSearch: React.PropTypes.array.isRequired,
 	cachedMatchingArticles: React.PropTypes.array.isRequired,
 	ifNoResultsFound: React.PropTypes.string.isRequired
 };
 
-function mapStateToProps({ entity:{ cachedSearch = [], cachedMatchingArticles = [], ifNoResultsFound = '' }} = {}) {
+function mapStateToProps({ entity:{ cachedMatchingArticles = [], ifNoResultsFound = '' }, auth: { authenticated = false } } = {}) {
 	return { 
-		cachedSearch, 
 		cachedMatchingArticles,
-		ifNoResultsFound
+		ifNoResultsFound,
+		authenticated
 	};
 };
 		

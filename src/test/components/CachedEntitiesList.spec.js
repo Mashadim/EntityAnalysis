@@ -8,7 +8,7 @@ import EntitiesText from '../../components/EntitiesText';
 function setup() {
 	const props = {
 		cachedMatchingArticles: []
-	}
+	};
 
 	const wrapper = shallow(
 		<CachedEntitiesList {...props} />
@@ -17,7 +17,7 @@ function setup() {
 	return {
 		props,
 		wrapper
-	}
+	};
 }
 
 describe('CachedEntitiesList', () => {
@@ -36,7 +36,7 @@ describe('CachedEntitiesList', () => {
 	it('should render render correct number of Entities', () => {
 		const testProps ={
 			cachedMatchingArticles: [{}, {}, {}]
-		}
+		};
 		
 		const testWrapper = shallow(
 			<CachedEntitiesList {...Object.assign({}, props, testProps)} />

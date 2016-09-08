@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import shallowCompare from 'react/lib/shallowCompare';
 import { fetchEntitiesCachedSearch } from '../redux/actions/actions';
@@ -47,6 +47,10 @@ export class CachedSearchBar extends Component {
 			</form>
 		)
 	};
+};
+
+CachedSearchBar.propTypes = {
+	fetchEntitiesCachedSearch: React.PropTypes.func.isRequired
 };
 
 export default connect(null, { fetchEntitiesCachedSearch })(CachedSearchBar);

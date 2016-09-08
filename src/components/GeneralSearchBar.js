@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import shallowCompare from 'react/lib/shallowCompare';
 import { connect } from 'react-redux';
 import { dbFetchEntities } from '../redux/actions/actions';
@@ -49,6 +49,10 @@ export class GeneralSearchBar extends Component {
 			</form>
 		)
 	};
+};
+
+GeneralSearchBar.propTypes = {
+	dbFetchEntities: React.PropTypes.func.isRequired
 };
 
 export default connect(null, { dbFetchEntities })(GeneralSearchBar);

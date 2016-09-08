@@ -1,7 +1,7 @@
 'use strict';
 
 const Sequelize = require('sequelize');
-const sequelizeConfig = require('./database.config.js');
+const sequelizeConfig = require('../../config/database.config.js');
 
 const SearchCache = sequelizeConfig.define('searchcache', {
 	searchInput: { type: Sequelize.STRING(3000), unique: true },

@@ -50,7 +50,8 @@ export class CachedSearchList extends Component {
 };
 
 CachedSearchList.propTypes = {
-	cachedSearch: React.PropTypes.array.isRequired
+	cachedSearch: React.PropTypes.array.isRequired,
+	dbFetchEntities: React.PropTypes.func.isRequired
 }
 
 function mapStateToProps({ entity: { cachedSearch = [] }} = {}) {

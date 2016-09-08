@@ -9,14 +9,14 @@ const hapi_cors = require('hapi-cors');
 const Boom = require('boom');
 const glob = require('glob');
 const path = require('path');
-const secret = require('./config');
+const secret = require('../config/config');
 const jwtAuth = require('hapi-auth-jwt');
 
 const url = require('url');
-const AYLIENTextAPI = require('../aylien.config');
+const AYLIENTextAPI = require('../config/aylien.config');
 
 const Sequelize = require('sequelize');
-const sequelizeConfig = require('./models/database.config');
+const sequelizeConfig = require('../config/database.config');
 const SearchCache = require('./models/SearchCache');
 
 const version = require('../package.json').version;

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Header from './Header';
 import { connect } from 'react-redux';
 
+
 export class App extends Component {
 	render() {
 		return(
