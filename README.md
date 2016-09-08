@@ -29,7 +29,7 @@ Once you have that setup:
 
 + run *npm start* in one tab in your terminal.
 + run *npm run dev* in another tab.
-+ run *psql entitydb in another tab. ( *\d* to see all tables, *\x* to see tables in better view, *SELECT \* FROM TABLENAMEHERE* to access the table, *\q* to exit*).
++ run *psql entitydb* in another tab. ( *\d* to see all tables, *\x* to see tables in better view, *SELECT \* FROM TABLENAMEHERE* to access the table, *\q* to exit*).
 
 If you plan to reuse please make sure to .gitignore things like your API key and PostgreSQL username/password:
 
