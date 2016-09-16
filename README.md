@@ -11,7 +11,7 @@ Have an article that you want to get entity data(ie. dates, people, organization
 + Created with React/Redux, PostgreSQL, Node/Hapi.js and other tools. 
 + Entities saved in PostgreSQL to reduce network requests to third-party API and to take data out of state for better performance.
 + Utilized methods such as shouldComponentUpdate and only connecting Components to props they will use rather than the entire state. This stops re-rendering when nothing has changed and improves app optimization.
-+ Set up back-end Authentication.
++ Set up back-end authentication.
 + Added tests.
 
 #### Currently Working on
@@ -29,7 +29,7 @@ Once you have that setup:
 
 + run *npm start* in one tab in your terminal.
 + run *npm run dev* in another tab.
-+ run *psql entitydb* in another tab. ( *\d* to see all tables, *\x* to see tables in better view, *SELECT \* FROM TABLENAMEHERE* to access the table, *\q* to exit*).
++ run *psql entitydb* in another tab. ( *\d* to see all tables, *\x* to see tables in better view, *SELECT * FROM TABLENAMEHERE* to access the table, *\q* to exit).
 
 If you plan to reuse please make sure to .gitignore things like your API key and PostgreSQL username/password:
 
@@ -42,4 +42,3 @@ If you plan to reuse please make sure to .gitignore things like your API key and
     npm_debug.log   
     .DS_Store   
     dist/
-		
